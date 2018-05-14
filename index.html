@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>jQuery.appear.js</title>
+<meta charset="utf-8"/>
+<meta name="keywords" content="javascript,css,html,nodejs,mongoDB,PHP,MySQL,swift" />
+<meta name="description" content="iruxu's Notebook for web develope" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="jQuery.appear.js"></script>
+<style>
+    li {
+        width: 200px;
+        height: 200px;
+        background-color: #f39;
+        margin-bottom: 20px;
+    }
+    .haha {
+        background-color: #93f;
+    }
+</style>
+</head>
+<body>
+    <p>紫色块块每出现一次加个哈哈</p>
+    <ul id="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="haha"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        $('.haha').appear(function(ele){
+            $(ele).append('哈哈')
+        },null,false)
+    </script>
+</body>
+</html>
