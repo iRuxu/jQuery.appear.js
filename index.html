@@ -12,19 +12,51 @@
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="jQuery.appear.js"></script>
 <style>
+    body{
+        margin:0;
+        padding:0;
+        background-color:#111;
+    }
+    .nav{
+        position:fixed;
+        top:0;
+        left:0;
+        background-color:#222;
+        margin:0;
+        padding-top:10px;
+        width:100%;
+        color:#0cf;
+    }
+    .progress{
+        height:5px;
+        background-color:#0cf;
+        width:0;
+        transition:all 0.2s ease-in-out;
+    }
+    a{
+        color:#fff;
+        margin:0 10px;
+    }
     li {
         width: 200px;
         height: 200px;
-        background-color: #f39;
+        background-color:#333;
         margin-bottom: 20px;
+        border-radius:6px;
+        list-style:none;
+        word-break: break-all;
     }
-    .haha {
-        background-color: #93f;
+    .sp {
+        background-color: #0cf;
     }
 </style>
 </head>
 <body>
-    <p>紫色块块每出现一次加个哈哈</p>
+    <div class="nav">
+        <a href="https://github.com/iRuxu/jQuery.appear.js">&laquo;返回</a>
+        蓝色区块每出现一次进度条增长，内容增加一个单词</p>
+        <div class="progress"></div>
+    </div>
     <ul id="box">
         <li></li>
         <li></li>
@@ -34,7 +66,7 @@
         <li></li>
         <li></li>
         <li></li>
-        <li class="haha"></li>
+        <li class="sp">Hello</li>
         <li></li>
         <li></li>
         <li></li>
@@ -42,8 +74,11 @@
         <li></li>
     </ul>
     <script>
-        $('.haha').appear(function(ele){
-            $(ele).append('哈哈')
+        $('.sp').appear(function(ele){
+            $(ele).append('Hello')
+            $('.progress').width(function (i,val){
+                return val + 50
+            })
         },null,false)
     </script>
 </body>
